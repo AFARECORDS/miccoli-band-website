@@ -20,9 +20,10 @@ body {
   background:
     radial-gradient(ellipse at 12% 0%, rgba(208, 173, 99, 0.18), transparent 26rem),
     radial-gradient(ellipse at 78% 6%, rgba(42, 70, 58, 0.72), transparent 34rem),
-    radial-gradient(ellipse at 92% 58%, rgba(124, 70, 68, 0.38), transparent 31rem),
+    radial-gradient(ellipse at 92% 58%, rgba(124, 70, 68, 0.52), transparent 36rem),
+    radial-gradient(ellipse at 50% 72%, rgba(118, 55, 45, 0.42), transparent 40rem),
     radial-gradient(ellipse at 8% 82%, rgba(30, 45, 39, 0.78), transparent 32rem),
-    linear-gradient(135deg, #030504 0%, #0b1410 24%, #18231e 43%, #211719 64%, #100b0c 82%, #040404 100%);
+    linear-gradient(135deg, #030504 0%, #0b1410 22%, #18231e 40%, #2a1715 61%, #1b0d0c 79%, #040404 100%);
   background-attachment: fixed;
   color: var(--text);
   font-family: "Cormorant Garamond", Georgia, serif;
@@ -85,11 +86,12 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.25rem; lett
 .tour-panel { padding: 2rem; text-align: center; max-width: 780px; margin: 0 auto; }
 .tour-status { font-size: 1.35rem; color: var(--text); }
 .instagram-section { max-width: 1240px; }
-.instagram-frame { padding: clamp(1rem, 2.5vw, 1.5rem); background: linear-gradient(145deg, rgba(71, 91, 68, .58), rgba(87, 54, 47, .34), rgba(5,7,6,.38)); }
+.instagram-section::before { height: 34rem; opacity: .68; background: radial-gradient(ellipse at 50% 30%, rgba(142, 63, 49, .56), transparent 28rem), radial-gradient(ellipse at 18% 70%, rgba(111, 46, 38, .45), transparent 24rem), radial-gradient(ellipse at 80% 54%, rgba(208,173,99,.13), transparent 22rem); }
+.instagram-frame { padding: clamp(1rem, 2.5vw, 1.5rem); background: linear-gradient(145deg, rgba(104, 54, 45, .68), rgba(122, 59, 47, .48), rgba(55, 76, 58, .38), rgba(5,7,6,.36)); }
 .instagram-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .65rem; }
-.instagram-tile { aspect-ratio: 1; display: grid; place-items: end start; padding: 1rem; overflow: hidden; border: 1px solid rgba(246,240,232,.16); background: radial-gradient(circle at 26% 18%, rgba(208,173,99,.38), transparent 11rem), linear-gradient(135deg, rgba(92,112,82,.72), rgba(34,48,40,.85) 46%, rgba(95,56,49,.72)); color: var(--text); }
-.instagram-tile:nth-child(2), .instagram-tile:nth-child(5) { background: radial-gradient(circle at 60% 22%, rgba(246,240,232,.18), transparent 10rem), linear-gradient(135deg, rgba(39,58,48,.86), rgba(113,69,55,.72)); }
-.instagram-tile:nth-child(3), .instagram-tile:nth-child(6) { background: radial-gradient(circle at 38% 25%, rgba(208,173,99,.26), transparent 9rem), linear-gradient(135deg, rgba(15,25,21,.92), rgba(76,94,68,.72), rgba(45,25,26,.88)); }
+.instagram-tile { aspect-ratio: 1; display: grid; place-items: end start; padding: 1rem; overflow: hidden; border: 1px solid rgba(246,240,232,.16); background: radial-gradient(circle at 26% 18%, rgba(208,173,99,.32), transparent 11rem), linear-gradient(135deg, rgba(136,66,52,.78), rgba(61,45,38,.85) 46%, rgba(90,48,43,.8)); color: var(--text); }
+.instagram-tile:nth-child(2), .instagram-tile:nth-child(5) { background: radial-gradient(circle at 60% 22%, rgba(246,240,232,.16), transparent 10rem), linear-gradient(135deg, rgba(83,53,43,.9), rgba(137,69,52,.78)); }
+.instagram-tile:nth-child(3), .instagram-tile:nth-child(6) { background: radial-gradient(circle at 38% 25%, rgba(208,173,99,.22), transparent 9rem), linear-gradient(135deg, rgba(25,21,19,.94), rgba(124,62,48,.78), rgba(52,27,25,.9)); }
 .instagram-tile span { font-family: "IM Fell English SC", "Cormorant Garamond", serif; text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; color: var(--text); text-shadow: 0 3px 16px rgba(0,0,0,.65); }
 .instagram-cta { margin-top: 1.1rem; }
 .press-section { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; padding: 2rem; }

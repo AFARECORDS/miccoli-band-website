@@ -13,7 +13,6 @@
   --shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
   --max: 1180px;
 }
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -72,7 +71,7 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.25rem; lett
 .section::before { content: ""; position: absolute; inset: 1rem -3rem auto; height: 20rem; pointer-events: none; z-index: -1; opacity: .32; background: radial-gradient(ellipse at 20% 20%, rgba(208,173,99,.09), transparent 23rem), radial-gradient(ellipse at 80% 30%, rgba(19,34,29,.55), transparent 30rem); }
 .section-heading { max-width: 720px; margin-bottom: 2.25rem; }
 .section-heading p { color: var(--muted); }
-.featured-release, .press-section, .newsletter-card, .tour-panel { background: linear-gradient(135deg, rgba(246,240,232,.085), rgba(19,34,29,.3), rgba(124,70,68,.1)); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.featured-release, .press-section, .newsletter-card, .tour-panel, .instagram-frame { background: linear-gradient(135deg, rgba(246,240,232,.085), rgba(19,34,29,.3), rgba(124,70,68,.1)); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .featured-release { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2rem; padding: 1rem; align-items: center; }
 .release-art, .video-placeholder, .product-card div, .mini-art { background: linear-gradient(135deg, rgba(208,173,99,.22), rgba(246,240,232,.055), rgba(19,34,29,.42), rgba(124,70,68,.18)); border: 1px solid var(--line); }
 .release-art { min-height: 390px; display: grid; place-items: center; color: var(--muted); text-transform: uppercase; letter-spacing: .16em; }
@@ -85,6 +84,14 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.25rem; lett
 .video-placeholder { aspect-ratio: 16/9; display: grid; place-items: center; color: var(--muted); margin-bottom: 1rem; text-align: center; }
 .tour-panel { padding: 2rem; text-align: center; max-width: 780px; margin: 0 auto; }
 .tour-status { font-size: 1.35rem; color: var(--text); }
+.instagram-section { max-width: 1240px; }
+.instagram-frame { padding: clamp(1rem, 2.5vw, 1.5rem); background: linear-gradient(145deg, rgba(71, 91, 68, .58), rgba(87, 54, 47, .34), rgba(5,7,6,.38)); }
+.instagram-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .65rem; }
+.instagram-tile { aspect-ratio: 1; display: grid; place-items: end start; padding: 1rem; overflow: hidden; border: 1px solid rgba(246,240,232,.16); background: radial-gradient(circle at 26% 18%, rgba(208,173,99,.38), transparent 11rem), linear-gradient(135deg, rgba(92,112,82,.72), rgba(34,48,40,.85) 46%, rgba(95,56,49,.72)); color: var(--text); }
+.instagram-tile:nth-child(2), .instagram-tile:nth-child(5) { background: radial-gradient(circle at 60% 22%, rgba(246,240,232,.18), transparent 10rem), linear-gradient(135deg, rgba(39,58,48,.86), rgba(113,69,55,.72)); }
+.instagram-tile:nth-child(3), .instagram-tile:nth-child(6) { background: radial-gradient(circle at 38% 25%, rgba(208,173,99,.26), transparent 9rem), linear-gradient(135deg, rgba(15,25,21,.92), rgba(76,94,68,.72), rgba(45,25,26,.88)); }
+.instagram-tile span { font-family: "IM Fell English SC", "Cormorant Garamond", serif; text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; color: var(--text); text-shadow: 0 3px 16px rgba(0,0,0,.65); }
+.instagram-cta { margin-top: 1.1rem; }
 .press-section { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; padding: 2rem; }
 .press-copy p, .tour-panel p, .newsletter-card p, .card p, .product-card p { color: var(--muted); }
 .quote-stack blockquote { margin: 0 0 1rem; padding: 1.25rem; background: rgba(0,0,0,.2); border-left: 2px solid var(--gold); color: var(--muted); font-style: italic; }
@@ -108,7 +115,7 @@ input { width: 100%; margin-top: .4rem; padding: .95rem; background: rgba(0,0,0,
   .nav-panel.is-open { display: grid; }
   .nav-links, .social-links { display: grid; gap: .9rem; }
   .featured-release, .press-section { grid-template-columns: 1fr; }
-  .card-grid, .video-grid, .contact-grid { grid-template-columns: 1fr; }
+  .card-grid, .video-grid, .contact-grid, .instagram-grid { grid-template-columns: 1fr; }
   .release-art { min-height: 300px; }
   .release-copy { padding: 1rem; }
   .section { padding: 4.2rem 1.1rem; }

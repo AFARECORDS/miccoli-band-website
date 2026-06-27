@@ -44,7 +44,8 @@ img, iframe { max-width: 100%; }
 .nav-links { justify-self: center; display: flex; gap: clamp(1.2rem, 2.3vw, 2.35rem); list-style: none; margin: 0; padding: 0; align-items: center; }
 .social-links, .footer-socials, .legal-links { display: flex; gap: .85rem; list-style: none; margin: 0; padding: 0; align-items: center; }
 .social-links { justify-self: end; }
-.nav-links a, .footer-socials a, .legal-links a { font-family: "IM Fell English SC", "Cormorant Garamond", serif; color: var(--text); font-size: .9rem; text-transform: uppercase; letter-spacing: .2em; }
+.nav-links a, .footer-socials a { font-family: "IM Fell English SC", "Cormorant Garamond", serif; color: var(--text); font-size: .9rem; text-transform: uppercase; letter-spacing: .2em; }
+.legal-links a { font-family: "Cormorant Garamond", Georgia, serif; color: rgba(184, 173, 155, .62); font-size: .72rem; text-transform: none; letter-spacing: .04em; }
 .social-links a { font-family: "Cormorant Garamond", Georgia, serif; color: var(--text); font-size: 1.05rem; line-height: 1; opacity: .9; }
 .nav-links a:hover, .social-links a:hover, .footer-socials a:hover, .legal-links a:hover { color: var(--gold); }
 .nav-toggle { display: none; background: none; border: 0; padding: .3rem; }
@@ -110,7 +111,13 @@ input { width: 100%; margin-top: .4rem; padding: .95rem; background: rgba(0,0,0,
 .contact-grid { grid-template-columns: repeat(4, 1fr); }
 .contact-card { color: var(--muted); word-break: break-word; }
 .contact-card span { display: block; color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-size: .74rem; margin-bottom: .5rem; }
-.site-footer { border-top: 1px solid var(--line); padding: 3rem 1.25rem; text-align: center; display: grid; gap: 1.2rem; justify-items: center; color: var(--muted); position: relative; z-index: 1; }
+.site-footer { border-top: 1px solid rgba(246, 240, 232, 0.09); padding: 2.6rem 1.25rem 2.2rem; text-align: center; display: grid; gap: .85rem; justify-items: center; color: rgba(184, 173, 155, .72); position: relative; z-index: 1; }
+.site-footer .brand { font-size: clamp(1.35rem, 1.7vw, 1.7rem); margin-bottom: .2rem; }
+.site-footer .footer-socials { gap: .9rem; margin-bottom: .15rem; }
+.site-footer .footer-socials a { font-size: .74rem; letter-spacing: .16em; color: rgba(241, 234, 220, .72); }
+.site-footer .legal-links { gap: .65rem; flex-wrap: wrap; justify-content: center; max-width: 720px; }
+.site-footer .legal-links a { color: rgba(184, 173, 155, .48); font-size: .68rem; letter-spacing: .025em; }
+.site-footer p { margin: -.15rem 0 0; color: rgba(184, 173, 155, .44); font-size: .72rem; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 900px) {

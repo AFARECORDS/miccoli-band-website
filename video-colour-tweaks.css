@@ -1,28 +1,28 @@
 .videos-section::before {
-  opacity: .62;
+  opacity: .82;
   background:
-    radial-gradient(ellipse at 16% 20%, rgba(190, 232, 214, .24), transparent 24rem),
-    radial-gradient(ellipse at 65% 28%, rgba(151, 197, 139, .22), transparent 30rem),
-    radial-gradient(ellipse at 48% 78%, rgba(92, 137, 127, .18), transparent 34rem);
+    radial-gradient(ellipse at 18% 18%, rgba(198, 238, 221, .34), transparent 26rem),
+    radial-gradient(ellipse at 64% 25%, rgba(164, 211, 151, .32), transparent 32rem),
+    radial-gradient(ellipse at 50% 78%, rgba(112, 158, 146, .24), transparent 34rem);
 }
 
 .videos-section .video-card {
   background:
     linear-gradient(145deg,
-      rgba(190, 232, 214, .10),
-      rgba(151, 197, 139, .12) 42%,
-      rgba(92, 137, 127, .14)
+      rgba(198, 238, 221, .16),
+      rgba(164, 211, 151, .20) 42%,
+      rgba(112, 158, 146, .18)
     );
-  border-color: rgba(190, 232, 214, .16);
+  border-color: rgba(198, 238, 221, .24);
 }
 
 .videos-section .video-placeholder {
   background:
-    radial-gradient(circle at 28% 20%, rgba(190, 232, 214, .26), transparent 10rem),
+    radial-gradient(circle at 28% 20%, rgba(198, 238, 221, .38), transparent 11rem),
     linear-gradient(135deg,
-      rgba(151, 197, 139, .24),
-      rgba(92, 137, 127, .26),
-      rgba(27, 61, 42, .20)
+      rgba(164, 211, 151, .36),
+      rgba(112, 158, 146, .32),
+      rgba(48, 92, 63, .22)
     );
-  border-color: rgba(190, 232, 214, .18);
+  border-color: rgba(198, 238, 221, .26);
 }

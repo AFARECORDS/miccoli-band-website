@@ -1,0 +1,40 @@
+.music-section::before {
+  opacity: .5;
+  background:
+    radial-gradient(ellipse at 18% 12%, rgba(178, 224, 206, .18), transparent 24rem),
+    radial-gradient(ellipse at 72% 24%, rgba(139, 184, 129, .24), transparent 28rem),
+    radial-gradient(ellipse at 50% 78%, rgba(76, 118, 112, .22), transparent 34rem);
+}
+
+.music-section .featured-release {
+  background:
+    linear-gradient(135deg,
+      rgba(178, 224, 206, .11),
+      rgba(139, 184, 129, .16) 38%,
+      rgba(76, 118, 112, .20) 68%,
+      rgba(6, 20, 14, .28)
+    );
+  border-color: rgba(178, 224, 206, .18);
+}
+
+.music-section .card {
+  background:
+    linear-gradient(145deg,
+      rgba(178, 224, 206, .09),
+      rgba(139, 184, 129, .13) 42%,
+      rgba(76, 118, 112, .17)
+    );
+  border-color: rgba(178, 224, 206, .14);
+}
+
+.music-section .release-art,
+.music-section .mini-art {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(178, 224, 206, .28), transparent 10rem),
+    linear-gradient(135deg,
+      rgba(139, 184, 129, .34),
+      rgba(76, 118, 112, .36),
+      rgba(23, 57, 35, .32)
+    );
+  border-color: rgba(178, 224, 206, .18);
+}

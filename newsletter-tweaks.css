@@ -1,0 +1,56 @@
+.newsletter-section {
+  max-width: 760px;
+  padding-top: 4.2rem;
+  padding-bottom: 4.2rem;
+}
+
+.newsletter-card {
+  padding: clamp(1.35rem, 3.4vw, 2.25rem);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.38);
+}
+
+.newsletter-card h2 {
+  font-size: clamp(2rem, 4.6vw, 3.35rem);
+  letter-spacing: .065em;
+  margin-bottom: .75rem;
+}
+
+.newsletter-card > p:not(.eyebrow) {
+  font-size: .98rem;
+  margin-bottom: .5rem;
+}
+
+.signup-form {
+  max-width: 610px;
+  margin: 1.35rem auto 0;
+  gap: .75rem;
+}
+
+.signup-form label {
+  font-size: .95rem;
+}
+
+.newsletter-card input {
+  padding: .72rem .85rem;
+  margin-top: .3rem;
+}
+
+.newsletter-card .consent {
+  font-size: .9rem;
+}
+
+.newsletter-card .btn {
+  min-height: 2.35rem;
+  padding: .62rem 1rem;
+}
+
+@media (max-width: 900px) {
+  .newsletter-section {
+    padding-top: 3.4rem;
+    padding-bottom: 3.4rem;
+  }
+
+  .newsletter-card h2 {
+    font-size: clamp(1.85rem, 9vw, 2.8rem);
+  }
+}

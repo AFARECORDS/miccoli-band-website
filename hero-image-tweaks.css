@@ -16,7 +16,8 @@
       rgba(3, 7, 5, .00) 48%,
       rgba(3, 7, 5, .28) 100%
     ),
-    url("assets/images/Miccoli_Image2.jpg") center 7.5rem / min(82vw, 1220px) auto no-repeat;
+    url("assets/images/Miccoli_Image2.jpg") center 7.5rem / min(82vw, 1220px) auto no-repeat,
+    url("assets/images/Miccoli_Image2.jpg") center top / cover no-repeat;
   background-color: #111b14;
 }
 

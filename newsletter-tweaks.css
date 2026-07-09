@@ -1,4 +1,4 @@
-@import url("hero-image-tweaks.css?v=4");
+@import url("hero-image-tweaks.css?v=5");
 @import url("music-colour-tweaks.css?v=1");
 @import url("video-colour-tweaks.css?v=1");
 
@@ -50,8 +50,8 @@
 
 .hero-media {
   background:
-    linear-gradient(to bottom, rgba(255,255,255,.08) 0%, rgba(3,7,5,0) 48%, rgba(3,7,5,.18) 100%),
-    url("assets/images/Miccoli_Image2.jpg") center 5.75rem / min(76vw, 1080px) auto no-repeat !important;
+    linear-gradient(to bottom, rgba(255,255,255,.06) 0%, rgba(3,7,5,0) 48%, rgba(3,7,5,.22) 100%),
+    url("assets/images/Miccoli_Image2.jpg") center 28% / cover no-repeat !important;
   background-color: #111b14 !important;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .hero-media::after {
-  background: linear-gradient(to bottom, rgba(0,0,0,0), transparent 50%, rgba(0,0,0,.24)) !important;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), transparent 50%, rgba(0,0,0,.28)) !important;
   opacity: 1 !important;
 }
 
@@ -85,7 +85,7 @@
 
   .hero-media {
     background:
-      linear-gradient(to bottom, rgba(255,255,255,.08) 0%, rgba(3,7,5,0) 48%, rgba(3,7,5,.18) 100%),
-      url("assets/images/Miccoli_Image2.jpg") center 5.75rem / contain no-repeat !important;
+      linear-gradient(to bottom, rgba(255,255,255,.06) 0%, rgba(3,7,5,0) 48%, rgba(3,7,5,.22) 100%),
+      url("assets/images/Miccoli_Image2.jpg") center top / cover no-repeat !important;
   }
 }

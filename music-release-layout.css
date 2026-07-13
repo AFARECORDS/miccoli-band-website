@@ -7,6 +7,7 @@
 .release-art.arrhythmia-art::before { content: ""; position: absolute; inset: 0; background-image: url("/miccoli-band-website/assets/images/arrhythmia%20full%20album%20cover.jpg?v=4"); background-position: center; background-size: 100% 100%; background-repeat: no-repeat; }
 .release-copy h3 { font-size: clamp(2rem, 4vw, 3.15rem); margin-bottom: .8rem; }
 .release-copy p:not(.eyebrow) { max-width: 610px; }
+.release-copy .btn { margin-left: 2rem; min-width: 185px; padding: .82rem 1.45rem; text-align: center; }
 .release-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.35rem; }
 .release-card { padding: 1rem; }
 .release-card .mini-art { aspect-ratio: 1; margin: 0 0 1rem; background-position: center; background-size: cover; background-repeat: no-repeat; border: 1px solid rgba(246,240,232,.18); box-shadow: 0 12px 32px rgba(0,0,0,.30); }
@@ -18,5 +19,6 @@
 @media (max-width: 760px) {
   .featured-release { grid-template-columns: 1fr; }
   .release-copy { padding: 1rem .35rem .35rem; }
+  .release-copy .btn { margin-left: 0; width: 100%; }
   .release-grid { grid-template-columns: 1fr; }
 }

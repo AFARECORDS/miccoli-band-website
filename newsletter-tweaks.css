@@ -74,20 +74,16 @@
 }
 
 .hero::before {
-  content: "MICCOLI";
+  content: "";
   position: absolute;
   left: 50%;
   bottom: 3.85rem;
   transform: translateX(-50%);
   z-index: 3;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(2.35rem, 4.6vw, 4.25rem);
-  font-weight: 300;
-  letter-spacing: .045em;
-  line-height: 1;
-  text-transform: uppercase;
-  text-shadow: 0 8px 28px rgba(0,0,0,.55);
+  width: clamp(220px, 24vw, 390px);
+  height: clamp(48px, 5.3vw, 86px);
+  background: url("assets/images/miccoli-logo-white-distressed.png") center center / contain no-repeat;
+  filter: brightness(1.8) drop-shadow(0 8px 28px rgba(0,0,0,.55));
   pointer-events: none;
 }
 
@@ -114,6 +110,7 @@
 
   .hero::before {
     bottom: 3.45rem;
-    font-size: clamp(2rem, 11vw, 3.25rem);
+    width: clamp(190px, 58vw, 310px);
+    height: clamp(42px, 13vw, 70px);
   }
 }

@@ -133,6 +133,48 @@ if (tourPanel) {
   document.body.appendChild(widgetScript);
 }
 
+// Build the curated Miccoli Instagram reel section.
+const instagramSection = document.querySelector('#instagram');
+if (instagramSection) {
+  const instagramStylesheet = document.createElement('link');
+  instagramStylesheet.rel = 'stylesheet';
+  instagramStylesheet.href = 'instagram-layout.css?v=1';
+  document.head.appendChild(instagramStylesheet);
+
+  const reelLinks = [
+    'https://www.instagram.com/reel/DWjuMCDiCvV/',
+    'https://www.instagram.com/reel/DT0sc_lgn_-/',
+    'https://www.instagram.com/reel/DQcrK_YAuSs/',
+    'https://www.instagram.com/reel/DOylRVUgsQI/',
+    'https://www.instagram.com/reel/DOEVRw5ghSS/',
+    'https://www.instagram.com/reel/DPd5umnDRp1/'
+  ];
+
+  instagramSection.innerHTML = `
+    <div class="section-heading reveal">
+      <p class="eyebrow">Instagram</p>
+      <h2 id="instagram-title">From the Miccoli world</h2>
+      <p>Recent reels, performances and behind-the-scenes moments from Miccoli.</p>
+    </div>
+    <div class="instagram-embed-grid">
+      ${reelLinks.map((link) => `
+        <article class="instagram-embed-card reveal">
+          <blockquote class="instagram-media" data-instgrm-permalink="${link}" data-instgrm-version="14">
+            <a href="${link}" target="_blank" rel="noopener noreferrer">View this reel on Instagram</a>
+          </blockquote>
+        </article>`).join('')}
+    </div>
+    <div class="center instagram-cta reveal">
+      <a class="btn btn-secondary" href="https://www.instagram.com/miccoliband" target="_blank" rel="noopener noreferrer">Follow Miccoli on Instagram</a>
+    </div>`;
+
+  const instagramScript = document.createElement('script');
+  instagramScript.src = 'https://www.instagram.com/embed.js';
+  instagramScript.async = true;
+  instagramScript.onload = () => window.instgrm?.Embeds?.process();
+  document.body.appendChild(instagramScript);
+}
+
 // Reveal sections as they enter the viewport. Falls back gracefully if unsupported.
 const revealItems = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {

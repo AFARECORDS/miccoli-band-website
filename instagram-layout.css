@@ -1,0 +1,32 @@
+/* Miccoli Instagram reel grid */
+.instagram-section .section-heading > p:last-child { max-width: 650px; }
+.instagram-embed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+.instagram-embed-card {
+  min-width: 0;
+  padding: .6rem;
+  overflow: hidden;
+  border: 1px solid rgba(208,173,99,.2);
+  background: rgba(10,12,12,.76);
+  box-shadow: 0 16px 38px rgba(0,0,0,.32);
+}
+.instagram-embed-card .instagram-media {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+.instagram-section .instagram-cta { margin-top: 2rem; }
+@media (max-width: 980px) {
+  .instagram-embed-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .instagram-embed-grid { grid-template-columns: 1fr; }
+  .instagram-embed-card { padding: .4rem; }
+  .instagram-section .instagram-cta .btn { width: 100%; }
+}

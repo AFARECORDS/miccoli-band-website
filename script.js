@@ -135,8 +135,13 @@ const instagramSection = document.querySelector('#instagram');
 if (instagramSection) {
   const instagramStylesheet = document.createElement('link');
   instagramStylesheet.rel = 'stylesheet';
-  instagramStylesheet.href = 'instagram-layout.css?v=5';
+  instagramStylesheet.href = 'instagram-layout.css?v=6';
   document.head.appendChild(instagramStylesheet);
+
+  const uncroppedFixStylesheet = document.createElement('link');
+  uncroppedFixStylesheet.rel = 'stylesheet';
+  uncroppedFixStylesheet.href = 'instagram-uncropped-fix.css?v=1';
+  document.head.appendChild(uncroppedFixStylesheet);
 
   const reelLinks = [
     'https://www.instagram.com/reel/DT0sc_lgn_-/',

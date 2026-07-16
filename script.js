@@ -135,7 +135,7 @@ const instagramSection = document.querySelector('#instagram');
 if (instagramSection) {
   const instagramStylesheet = document.createElement('link');
   instagramStylesheet.rel = 'stylesheet';
-  instagramStylesheet.href = 'instagram-layout.css?v=4';
+  instagramStylesheet.href = 'instagram-layout.css?v=5';
   document.head.appendChild(instagramStylesheet);
 
   const reelLinks = [

@@ -130,13 +130,13 @@ if (tourPanel) {
 
 const instagramSection = document.querySelector('#instagram');
 if (instagramSection) {
-  const reels = [
-    ['DT0sc_lgn_-', 'https://www.instagram.com/reel/DT0sc_lgn_-/'],
-    ['DPd5umnDRp1', 'https://www.instagram.com/reel/DPd5umnDRp1/'],
-    ['DOylRVUgsQI', 'https://www.instagram.com/reel/DOylRVUgsQI/'],
-    ['DOEVRw5ghSS', 'https://www.instagram.com/reel/DOEVRw5ghSS/'],
-    ['DWjuMCDiCvV', 'https://www.instagram.com/reel/DWjuMCDiCvV/'],
-    ['DQcrK_YAuSs', 'https://www.instagram.com/reel/DQcrK_YAuSs/']
+  const reelLinks = [
+    'https://www.instagram.com/reel/DT0sc_lgn_-/',
+    'https://www.instagram.com/reel/DPd5umnDRp1/',
+    'https://www.instagram.com/reel/DOylRVUgsQI/',
+    'https://www.instagram.com/reel/DOEVRw5ghSS/',
+    'https://www.instagram.com/reel/DWjuMCDiCvV/',
+    'https://www.instagram.com/reel/DQcrK_YAuSs/'
   ];
 
   instagramSection.innerHTML = `
@@ -146,10 +146,9 @@ if (instagramSection) {
       <p>Recent reels, performances and behind-the-scenes moments from Miccoli.</p>
     </div>
     <div class="instagram-embed-grid">
-      ${reels.map(([code, link]) => `
+      ${reelLinks.map((link) => `
         <article class="instagram-embed-card reveal">
           <a class="instagram-media" href="${link}" target="_blank" rel="noopener noreferrer" aria-label="View Miccoli Reel on Instagram">
-            <img src="https://www.instagram.com/p/${code}/media/?size=l" alt="Miccoli Instagram Reel" loading="lazy" referrerpolicy="no-referrer">
             <span class="instagram-play" aria-hidden="true">▶</span>
             <span class="instagram-view">View Reel</span>
           </a>
@@ -163,9 +162,14 @@ if (instagramSection) {
   instagramStyles.textContent = `
     .instagram-section .section-heading > p:last-child { max-width: 650px; }
     .instagram-embed-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2px; max-width:980px; margin:2rem auto 0; border:1px solid rgba(208,173,99,.35); background:rgba(208,173,99,.35); }
-    .instagram-embed-card { position:relative; aspect-ratio:1/1; overflow:hidden; background:#111; }
+    .instagram-embed-card { position:relative; aspect-ratio:1/1; overflow:hidden; background-image:url("assets/images/instagram-grid-sprite-uncropped%20(1).jpg?v=1"); background-size:300% 200%; background-repeat:no-repeat; background-color:#111; }
+    .instagram-embed-card:nth-child(1) { background-position:0% 0%; }
+    .instagram-embed-card:nth-child(2) { background-position:50% 0%; }
+    .instagram-embed-card:nth-child(3) { background-position:100% 0%; }
+    .instagram-embed-card:nth-child(4) { background-position:0% 100%; }
+    .instagram-embed-card:nth-child(5) { background-position:50% 100%; }
+    .instagram-embed-card:nth-child(6) { background-position:100% 100%; }
     .instagram-media { position:absolute; inset:0; display:block; color:#fff; text-decoration:none; }
-    .instagram-media img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
     .instagram-media::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.72)); pointer-events:none; }
     .instagram-play { position:absolute; top:12px; right:12px; z-index:2; width:30px; height:30px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.75); border-radius:50%; background:rgba(0,0,0,.45); font-size:11px; }
     .instagram-view { position:absolute; left:14px; bottom:12px; z-index:2; font-size:.67rem; letter-spacing:.12em; text-transform:uppercase; }

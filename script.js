@@ -179,6 +179,12 @@ if (instagramSection) {
   document.head.appendChild(instagramStyles);
 }
 
+const storeSection = document.querySelector('#store');
+const videosSection = document.querySelector('#videos');
+if (storeSection && videosSection) {
+  videosSection.insertAdjacentElement('afterend', storeSection);
+}
+
 const revealItems = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {

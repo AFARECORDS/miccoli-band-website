@@ -4,14 +4,11 @@ const navToggle = document.querySelector('[data-nav-toggle]');
 const navPanel = document.querySelector('[data-nav-panel]');
 const year = document.querySelector('[data-year]');
 
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+if (year) year.textContent = new Date().getFullYear();
 
 function updateHeaderState() {
   header?.classList.toggle('is-scrolled', window.scrollY > 24);
 }
-
 updateHeaderState();
 window.addEventListener('scroll', updateHeaderState, { passive: true });
 
@@ -133,23 +130,13 @@ if (tourPanel) {
 
 const instagramSection = document.querySelector('#instagram');
 if (instagramSection) {
-  const instagramStylesheet = document.createElement('link');
-  instagramStylesheet.rel = 'stylesheet';
-  instagramStylesheet.href = 'instagram-layout.css?v=6';
-  document.head.appendChild(instagramStylesheet);
-
-  const uncroppedFixStylesheet = document.createElement('link');
-  uncroppedFixStylesheet.rel = 'stylesheet';
-  uncroppedFixStylesheet.href = 'instagram-uncropped-fix.css?v=1';
-  document.head.appendChild(uncroppedFixStylesheet);
-
-  const reelLinks = [
-    'https://www.instagram.com/reel/DT0sc_lgn_-/',
-    'https://www.instagram.com/reel/DPd5umnDRp1/',
-    'https://www.instagram.com/reel/DOylRVUgsQI/',
-    'https://www.instagram.com/reel/DOEVRw5ghSS/',
-    'https://www.instagram.com/reel/DWjuMCDiCvV/',
-    'https://www.instagram.com/reel/DQcrK_YAuSs/'
+  const reels = [
+    ['DT0sc_lgn_-', 'https://www.instagram.com/reel/DT0sc_lgn_-/'],
+    ['DPd5umnDRp1', 'https://www.instagram.com/reel/DPd5umnDRp1/'],
+    ['DOylRVUgsQI', 'https://www.instagram.com/reel/DOylRVUgsQI/'],
+    ['DOEVRw5ghSS', 'https://www.instagram.com/reel/DOEVRw5ghSS/'],
+    ['DWjuMCDiCvV', 'https://www.instagram.com/reel/DWjuMCDiCvV/'],
+    ['DQcrK_YAuSs', 'https://www.instagram.com/reel/DQcrK_YAuSs/']
   ];
 
   instagramSection.innerHTML = `
@@ -159,14 +146,33 @@ if (instagramSection) {
       <p>Recent reels, performances and behind-the-scenes moments from Miccoli.</p>
     </div>
     <div class="instagram-embed-grid">
-      ${reelLinks.map((link) => `
+      ${reels.map(([code, link]) => `
         <article class="instagram-embed-card reveal">
-          <a class="instagram-media" href="${link}" target="_blank" rel="noopener noreferrer" aria-label="View Miccoli Reel on Instagram"></a>
+          <a class="instagram-media" href="${link}" target="_blank" rel="noopener noreferrer" aria-label="View Miccoli Reel on Instagram">
+            <img src="https://www.instagram.com/p/${code}/media/?size=l" alt="Miccoli Instagram Reel" loading="lazy" referrerpolicy="no-referrer">
+            <span class="instagram-play" aria-hidden="true">▶</span>
+            <span class="instagram-view">View Reel</span>
+          </a>
         </article>`).join('')}
     </div>
     <div class="center instagram-cta reveal">
       <a class="btn btn-secondary" href="https://www.instagram.com/miccoliband" target="_blank" rel="noopener noreferrer">Follow Miccoli on Instagram</a>
     </div>`;
+
+  const instagramStyles = document.createElement('style');
+  instagramStyles.textContent = `
+    .instagram-section .section-heading > p:last-child { max-width: 650px; }
+    .instagram-embed-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2px; max-width:980px; margin:2rem auto 0; border:1px solid rgba(208,173,99,.35); background:rgba(208,173,99,.35); }
+    .instagram-embed-card { position:relative; aspect-ratio:1/1; overflow:hidden; background:#111; }
+    .instagram-media { position:absolute; inset:0; display:block; color:#fff; text-decoration:none; }
+    .instagram-media img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .instagram-media::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.72)); pointer-events:none; }
+    .instagram-play { position:absolute; top:12px; right:12px; z-index:2; width:30px; height:30px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.75); border-radius:50%; background:rgba(0,0,0,.45); font-size:11px; }
+    .instagram-view { position:absolute; left:14px; bottom:12px; z-index:2; font-size:.67rem; letter-spacing:.12em; text-transform:uppercase; }
+    .instagram-cta { margin-top:1.5rem; }
+    @media (max-width:760px) { .instagram-embed-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  `;
+  document.head.appendChild(instagramStyles);
 }
 
 const revealItems = document.querySelectorAll('.reveal');
@@ -179,7 +185,6 @@ if ('IntersectionObserver' in window) {
       }
     });
   }, { threshold: 0.16 });
-
   revealItems.forEach((item) => observer.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add('is-visible'));

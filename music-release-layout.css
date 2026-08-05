@@ -16,6 +16,26 @@
 .release-card h3 { font-size: 1.4rem; margin-bottom: .35rem; }
 .release-type { margin: 0 0 .55rem; color: var(--gold) !important; font-family: "IM Fell English SC", "Cormorant Garamond", serif; text-transform: uppercase; letter-spacing: .16em; font-size: .72rem; }
 .release-card p:last-child { margin-bottom: .35rem; }
+
+/* Individual singles artwork — avoids sprite blur and partial loading */
+.single-cover {
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: #111 !important;
+}
+.single-cover-1 { background-image: url("/miccoli-band-website/assets/images/singles/simply%20the%20best.jpg?v=2") !important; }
+.single-cover-2 { background-image: url("/miccoli-band-website/assets/images/singles/Can%20You%20Hear%20Me%20Single%20Cover%20%283%29.jpg?v=2") !important; }
+.single-cover-3 { background-image: url("/miccoli-band-website/assets/images/singles/Sielnt%20Art%20work%20cover%20%282%29.jpg?v=2") !important; }
+.single-cover-4 { background-image: url("/miccoli-band-website/assets/images/singles/night%20%281%29.jpg?v=2") !important; }
+.single-cover-5 { background-image: url("/miccoli-band-website/assets/images/singles/170x170cc.jpg?v=2") !important; }
+.single-cover-6 { background-image: url("/miccoli-band-website/assets/images/singles/dont%20you%20worry%20%281%29.jpg?v=2") !important; }
+.single-cover-7 { background-image: url("/miccoli-band-website/assets/images/singles/if%20i%20could%202%20%281%29.jpg?v=2") !important; }
+.single-cover-8 { background-image: url("/miccoli-band-website/assets/images/singles/Home%20Stripped%20artwork%20%285000%20x%205000%20px%29.jpg?v=2") !important; }
+.single-cover-9 { background-image: url("/miccoli-band-website/assets/images/singles/Lights%20Stripped%20artwork%20%285000%20x%205000%20px%29.jpg?v=2") !important; }
+.single-cover-10 { background-image: url("/miccoli-band-website/assets/images/singles/512x512bb.jpg?v=2") !important; }
+.single-cover-11 { background-image: url("/miccoli-band-website/assets/images/singles/512x512bb%20%281%29.jpg?v=2") !important; }
+
 @media (max-width: 760px) {
   .featured-release { grid-template-columns: 1fr !important; max-width: 500px; gap: 1.5rem; }
   .release-art { width: min(72vw, 255px) !important; max-width: 255px !important; margin: 0 auto; }

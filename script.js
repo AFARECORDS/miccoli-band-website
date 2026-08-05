@@ -179,6 +179,90 @@ if (instagramSection) {
   document.head.appendChild(instagramStyles);
 }
 
+const musicSection = document.querySelector('#music');
+if (musicSection) {
+  const singles = [
+    ['Simply the Best — Acoustic', 'https://open.spotify.com/track/74eUpCCPSOJqfEC5LRVpR0?si=4a82d995295b4aa5'],
+    ['Can You Hear Me — Acoustic', 'https://open.spotify.com/track/2njYCa2YALOx3IOW8eRi5h?si=bddb6dcb168243e0'],
+    ['Silent — Acoustic', 'https://open.spotify.com/track/5JS78daV6NQraaiDRcVlC0?si=9f6e4f134934444b'],
+    ['Night', 'https://open.spotify.com/track/1pMn0Tg7aIqM258f8zlN4N?si=9441de49ada14340'],
+    ['Devices', 'https://open.spotify.com/track/5p4xV7N5ZQiw9ti7oFJbTL?si=4717dc763f274331'],
+    ['Don’t You Worry', 'https://open.spotify.com/track/6dJh5L9IbFrGjxP2XpoJ4m?si=a14cb2ba4cab4ccb'],
+    ['If I Could — Acoustic', 'https://open.spotify.com/track/4agUcHh3sbY0zUzCQaNoBa?si=edd118cb10f3407a'],
+    ['Home — Stripped', 'https://open.spotify.com/track/7mJsGgzzusl1LrG4fjKtZS?si=9054a4cd30654fa4'],
+    ['Lights — Stripped', 'https://open.spotify.com/track/4aop5moZxxYkhXcG7Omgdc?si=e659aa28181d40df'],
+    ['Idle Stranger', 'https://open.spotify.com/track/11S6dH5Sklh1cE0UrmvlKl?si=9e009a963b9e4eb0'],
+    ['Undo', 'https://open.spotify.com/track/5M3p81lNDVYaVYoIS38fTt?si=72446c60c29649ff']
+  ];
+
+  const singlesBlock = document.createElement('div');
+  singlesBlock.className = 'singles-carousel-block reveal';
+  singlesBlock.innerHTML = `
+    <div class="singles-heading">
+      <p class="eyebrow">Singles</p>
+      <h3>Selected Singles</h3>
+    </div>
+    <div class="singles-carousel-shell">
+      <button class="singles-arrow singles-prev" type="button" aria-label="Previous single">‹</button>
+      <div class="singles-track" tabindex="0" aria-label="Miccoli singles carousel">
+        ${singles.map(([title, link], index) => `
+          <article class="single-slide">
+            <div class="single-cover single-cover-${index + 1}" role="img" aria-label="${title} cover artwork"></div>
+            <div class="single-copy">
+              <p class="release-type">Single</p>
+              <h4>${title}</h4>
+              <a class="btn btn-primary" href="${link}" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
+            </div>
+          </article>`).join('')}
+      </div>
+      <button class="singles-arrow singles-next" type="button" aria-label="Next single">›</button>
+    </div>
+    <div class="singles-count" aria-live="polite"><span>1</span> / ${singles.length}</div>`;
+  musicSection.appendChild(singlesBlock);
+
+  const singlesStyles = document.createElement('style');
+  singlesStyles.textContent = `
+    .singles-carousel-block { max-width:940px; margin:4rem auto 0; }
+    .singles-heading { text-align:center; margin-bottom:1.5rem; }
+    .singles-heading h3 { margin:.3rem 0 0; font-size:clamp(2rem,4vw,3rem); }
+    .singles-carousel-shell { position:relative; display:grid; grid-template-columns:46px minmax(0,1fr) 46px; align-items:center; gap:1rem; }
+    .singles-track { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; scroll-behavior:smooth; }
+    .singles-track::-webkit-scrollbar { display:none; }
+    .single-slide { flex:0 0 100%; scroll-snap-align:start; display:grid; grid-template-columns:minmax(250px,360px) minmax(0,1fr); align-items:center; gap:clamp(2rem,6vw,5rem); padding:clamp(1rem,3vw,2rem); min-height:410px; border:1px solid rgba(208,173,99,.24); background:rgba(246,240,232,.025); }
+    .single-cover { width:100%; max-width:340px; aspect-ratio:1; justify-self:center; background-image:url("assets/images/miccoli-singles-carousel-sprite.jpg?v=1"); background-size:400% 300%; background-repeat:no-repeat; background-color:#111; box-shadow:0 18px 46px rgba(0,0,0,.42); }
+    .single-cover-1 { background-position:0% 0%; } .single-cover-2 { background-position:33.333% 0%; } .single-cover-3 { background-position:66.667% 0%; } .single-cover-4 { background-position:100% 0%; }
+    .single-cover-5 { background-position:0% 50%; } .single-cover-6 { background-position:33.333% 50%; } .single-cover-7 { background-position:66.667% 50%; } .single-cover-8 { background-position:100% 50%; }
+    .single-cover-9 { background-position:0% 100%; } .single-cover-10 { background-position:33.333% 100%; } .single-cover-11 { background-position:66.667% 100%; }
+    .single-copy { text-align:left; }
+    .single-copy h4 { font-size:clamp(1.75rem,4vw,2.8rem); line-height:1.05; margin:.45rem 0 1.4rem; min-height:2.1em; display:flex; align-items:center; }
+    .single-copy .btn { min-width:190px; text-align:center; }
+    .singles-arrow { width:46px; height:46px; border:1px solid rgba(208,173,99,.65); border-radius:50%; background:rgba(10,14,12,.82); color:var(--gold); font:400 2rem/1 "Cormorant Garamond",serif; cursor:pointer; transition:background .2s ease,color .2s ease,transform .2s ease; }
+    .singles-arrow:hover { background:var(--gold); color:#111; transform:scale(1.04); }
+    .singles-count { margin-top:1rem; text-align:center; color:var(--gold); letter-spacing:.15em; font-size:.78rem; }
+    @media (max-width:760px) {
+      .singles-carousel-block { margin-top:3rem; }
+      .singles-carousel-shell { grid-template-columns:34px minmax(0,1fr) 34px; gap:.45rem; }
+      .singles-arrow { width:34px; height:34px; font-size:1.6rem; }
+      .single-slide { grid-template-columns:1fr; gap:1.3rem; min-height:0; padding:1rem 1rem 1.4rem; }
+      .single-cover { max-width:min(72vw,300px); }
+      .single-copy { text-align:center; }
+      .single-copy h4 { justify-content:center; min-height:0; margin:.35rem 0 1rem; }
+      .single-copy .btn { width:100%; max-width:280px; }
+    }
+  `;
+  document.head.appendChild(singlesStyles);
+
+  const track = singlesBlock.querySelector('.singles-track');
+  const count = singlesBlock.querySelector('.singles-count span');
+  const move = (direction) => track?.scrollBy({ left: direction * track.clientWidth, behavior: 'smooth' });
+  singlesBlock.querySelector('.singles-prev')?.addEventListener('click', () => move(-1));
+  singlesBlock.querySelector('.singles-next')?.addEventListener('click', () => move(1));
+  track?.addEventListener('scroll', () => {
+    const index = Math.round(track.scrollLeft / Math.max(track.clientWidth, 1));
+    if (count) count.textContent = String(Math.min(singles.length, Math.max(1, index + 1)));
+  }, { passive: true });
+}
+
 const storeSection = document.querySelector('#store');
 const videosSection = document.querySelector('#videos');
 if (storeSection && videosSection) {

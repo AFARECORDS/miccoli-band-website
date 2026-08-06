@@ -1,0 +1,197 @@
+/* Horizontal carousel treatment for The Miccoli Story */
+.miccoli-story-section {
+  display: flex !important;
+  gap: clamp(1rem, 2.5vw, 2rem) !important;
+  max-width: none !important;
+  width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: clamp(3rem, 6vw, 5rem) max(1rem, calc((100vw - 1180px) / 2)) 2rem !important;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: max(1rem, calc((100vw - 1180px) / 2));
+  scrollbar-width: thin;
+  scrollbar-color: rgba(208,173,99,.75) rgba(246,240,232,.08);
+  overscroll-behavior-inline: contain;
+  cursor: grab;
+}
+
+.miccoli-story-section:active { cursor: grabbing; }
+
+.miccoli-story-section::-webkit-scrollbar { height: 8px; }
+.miccoli-story-section::-webkit-scrollbar-track { background: rgba(246,240,232,.08); }
+.miccoli-story-section::-webkit-scrollbar-thumb { background: rgba(208,173,99,.75); border-radius: 999px; }
+
+.miccoli-story-section > * {
+  flex: 0 0 min(88vw, 1020px) !important;
+  width: min(88vw, 1020px) !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  box-sizing: border-box;
+}
+
+/* Keep only the strongest chapters in the horizontal journey. */
+.miccoli-story-section > .story-facts,
+.miccoli-story-section > .story-live-grid {
+  display: none !important;
+}
+
+.story-hero,
+.story-chapter,
+.story-arena,
+.story-break,
+.story-now {
+  min-height: clamp(500px, 62vw, 680px) !important;
+  max-height: 720px;
+  border: 1px solid rgba(208,173,99,.24) !important;
+  background-color: rgba(8,12,10,.96);
+  overflow: hidden;
+}
+
+.story-hero { position: relative; }
+.story-hero-copy { max-width: 680px !important; }
+.story-hero-copy h2 { font-size: clamp(3rem, 7vw, 5.6rem) !important; }
+.story-hero-copy > p:last-child { font-size: clamp(1rem, 1.8vw, 1.25rem) !important; }
+
+.story-chapter,
+.story-chapter-control {
+  display: grid !important;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr) !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+}
+
+.story-chapter-reverse .story-image { order: 0 !important; }
+
+.story-image {
+  height: 100%;
+  min-height: 500px;
+}
+
+.story-image::after { display: none !important; }
+.story-image img {
+  width: 100%;
+  height: 100% !important;
+  min-height: 500px;
+  aspect-ratio: auto !important;
+  object-fit: cover;
+}
+
+.story-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: none !important;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.story-copy h3,
+.story-arena-copy h3,
+.story-break h3,
+.story-now h3 {
+  font-size: clamp(1.9rem, 3.6vw, 3.2rem) !important;
+  margin-bottom: .9rem !important;
+}
+
+.story-copy p,
+.story-break p,
+.story-now p,
+.story-arena-copy p {
+  font-size: clamp(.96rem, 1.4vw, 1.05rem) !important;
+  line-height: 1.55;
+}
+
+.story-number { font-size: clamp(2rem, 4vw, 3.6rem) !important; }
+.story-pull {
+  margin-top: 1rem !important;
+  padding: .9rem 0 .9rem 1rem !important;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem) !important;
+}
+
+.story-arena {
+  position: relative;
+}
+.story-arena-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: 560px !important;
+  padding: clamp(2rem, 5vw, 4rem) !important;
+}
+
+.story-break {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left !important;
+  max-width: none !important;
+  padding: clamp(2rem, 6vw, 5rem) !important;
+  background:
+    linear-gradient(90deg, rgba(4,6,5,.94), rgba(4,6,5,.72)),
+    url("assets/images/miccoli-story/Miccoli%20facing%20the%20crowds%20at%2002%20arena%20London%20photo%20by%20Rosie%20Smith.jpg") center / cover no-repeat;
+}
+.story-break p:not(.eyebrow):not(.story-number) {
+  max-width: 700px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.story-control-visual {
+  min-height: 100% !important;
+  border: 0 !important;
+  border-right: 1px solid rgba(208,173,99,.22) !important;
+}
+
+.story-now {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: none !important;
+  padding: clamp(2rem, 6vw, 5rem) !important;
+}
+
+@media (max-width: 760px) {
+  .miccoli-story-section {
+    gap: .8rem !important;
+    padding: 2rem .75rem 1.5rem !important;
+    scroll-padding-inline: .75rem;
+  }
+
+  .miccoli-story-section > * {
+    flex-basis: 88vw !important;
+    width: 88vw !important;
+  }
+
+  .story-hero,
+  .story-chapter,
+  .story-arena,
+  .story-break,
+  .story-now {
+    min-height: 620px !important;
+    max-height: none;
+  }
+
+  .story-chapter,
+  .story-chapter-control {
+    grid-template-columns: 1fr !important;
+  }
+
+  .story-image,
+  .story-image img {
+    min-height: 250px !important;
+    height: 250px !important;
+  }
+
+  .story-copy { padding: 1.25rem !important; }
+  .story-control-visual {
+    min-height: 220px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(208,173,99,.22) !important;
+  }
+  .story-arena-copy { padding: 1.4rem !important; }
+  .story-break { padding: 1.5rem !important; }
+  .story-now { padding: 1.5rem !important; }
+}

@@ -1,4 +1,9 @@
 /* Horizontal carousel treatment for The Miccoli Story */
+.story-carousel-shell {
+  position: relative;
+  width: 100%;
+}
+
 .miccoli-story-section {
   display: flex !important;
   gap: clamp(1rem, 2.5vw, 2rem) !important;
@@ -6,20 +11,57 @@
   width: 100% !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
-  padding: clamp(3rem, 6vw, 5rem) max(1rem, calc((100vw - 1180px) / 2)) 2rem !important;
+  padding: clamp(3rem, 6vw, 5rem) max(4.5rem, calc((100vw - 1180px) / 2)) 3.5rem !important;
   scroll-snap-type: x mandatory;
-  scroll-padding-inline: max(1rem, calc((100vw - 1180px) / 2));
-  scrollbar-width: thin;
-  scrollbar-color: rgba(208,173,99,.75) rgba(246,240,232,.08);
+  scroll-padding-inline: max(4.5rem, calc((100vw - 1180px) / 2));
+  scrollbar-width: none;
   overscroll-behavior-inline: contain;
   cursor: grab;
 }
 
 .miccoli-story-section:active { cursor: grabbing; }
+.miccoli-story-section::-webkit-scrollbar { display: none; }
 
-.miccoli-story-section::-webkit-scrollbar { height: 8px; }
-.miccoli-story-section::-webkit-scrollbar-track { background: rgba(246,240,232,.08); }
-.miccoli-story-section::-webkit-scrollbar-thumb { background: rgba(208,173,99,.75); border-radius: 999px; }
+.story-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 8;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 1px solid rgba(208,173,99,.7);
+  border-radius: 50%;
+  background: rgba(10,14,12,.9);
+  color: var(--gold);
+  font: 400 2rem/1 "Cormorant Garamond",serif;
+  cursor: pointer;
+  transition: background .2s ease,color .2s ease,transform .2s ease,opacity .2s ease;
+}
+
+.story-carousel-prev { left: clamp(.75rem, 2vw, 2rem); }
+.story-carousel-next { right: clamp(.75rem, 2vw, 2rem); }
+.story-carousel-arrow:hover:not(:disabled) {
+  background: var(--gold);
+  color: #111;
+  transform: translateY(-50%) scale(1.05);
+}
+.story-carousel-arrow:disabled {
+  opacity: .28;
+  cursor: default;
+}
+
+.story-carousel-count {
+  position: absolute;
+  left: 50%;
+  bottom: .75rem;
+  transform: translateX(-50%);
+  z-index: 8;
+  color: var(--gold);
+  font-size: .78rem;
+  letter-spacing: .15em;
+}
 
 .miccoli-story-section > * {
   flex: 0 0 min(88vw, 1020px) !important;
@@ -31,7 +73,6 @@
   box-sizing: border-box;
 }
 
-/* Keep only the strongest chapters in the horizontal journey. */
 .miccoli-story-section > .story-facts,
 .miccoli-story-section > .story-live-grid {
   display: none !important;
@@ -63,12 +104,7 @@
 }
 
 .story-chapter-reverse .story-image { order: 0 !important; }
-
-.story-image {
-  height: 100%;
-  min-height: 500px;
-}
-
+.story-image { height: 100%; min-height: 500px; }
 .story-image::after { display: none !important; }
 .story-image img {
   width: 100%;
@@ -109,9 +145,7 @@
   font-size: clamp(1.05rem, 1.7vw, 1.3rem) !important;
 }
 
-.story-arena {
-  position: relative;
-}
+.story-arena { position: relative; }
 .story-arena-copy {
   display: flex;
   flex-direction: column;
@@ -156,15 +190,16 @@
 @media (max-width: 760px) {
   .miccoli-story-section {
     gap: .8rem !important;
-    padding: 2rem .75rem 1.5rem !important;
-    scroll-padding-inline: .75rem;
+    padding: 2rem 2.8rem 2.8rem !important;
+    scroll-padding-inline: 2.8rem;
   }
-
   .miccoli-story-section > * {
-    flex-basis: 88vw !important;
-    width: 88vw !important;
+    flex-basis: 84vw !important;
+    width: 84vw !important;
   }
-
+  .story-carousel-arrow { width: 34px; height: 34px; font-size: 1.6rem; }
+  .story-carousel-prev { left: .35rem; }
+  .story-carousel-next { right: .35rem; }
   .story-hero,
   .story-chapter,
   .story-arena,
@@ -173,18 +208,13 @@
     min-height: 620px !important;
     max-height: none;
   }
-
   .story-chapter,
-  .story-chapter-control {
-    grid-template-columns: 1fr !important;
-  }
-
+  .story-chapter-control { grid-template-columns: 1fr !important; }
   .story-image,
   .story-image img {
     min-height: 250px !important;
     height: 250px !important;
   }
-
   .story-copy { padding: 1.25rem !important; }
   .story-control-visual {
     min-height: 220px !important;

@@ -2,18 +2,20 @@
 .story-carousel-shell {
   position: relative;
   width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .miccoli-story-section {
   display: flex !important;
-  gap: clamp(1rem, 2.5vw, 2rem) !important;
+  gap: 1.35rem !important;
   max-width: none !important;
   width: 100% !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
-  padding: clamp(3rem, 6vw, 5rem) max(4.5rem, calc((100vw - 1180px) / 2)) 3.5rem !important;
+  padding: 3rem 4.5rem 3.25rem !important;
   scroll-snap-type: x mandatory;
-  scroll-padding-inline: max(4.5rem, calc((100vw - 1180px) / 2));
+  scroll-padding-inline: 4.5rem;
   scrollbar-width: none;
   overscroll-behavior-inline: contain;
   cursor: grab;
@@ -33,39 +35,37 @@
   transform: translateY(-50%);
   border: 1px solid rgba(208,173,99,.7);
   border-radius: 50%;
-  background: rgba(10,14,12,.9);
+  background: rgba(10,14,12,.92);
   color: var(--gold);
-  font: 400 2rem/1 "Cormorant Garamond",serif;
+  font: 400 2rem/1 Arial,sans-serif;
   cursor: pointer;
   transition: background .2s ease,color .2s ease,transform .2s ease,opacity .2s ease;
 }
 
-.story-carousel-prev { left: clamp(.75rem, 2vw, 2rem); }
-.story-carousel-next { right: clamp(.75rem, 2vw, 2rem); }
+.story-carousel-prev { left: .9rem; }
+.story-carousel-next { right: .9rem; }
 .story-carousel-arrow:hover:not(:disabled) {
   background: var(--gold);
   color: #111;
   transform: translateY(-50%) scale(1.05);
 }
-.story-carousel-arrow:disabled {
-  opacity: .28;
-  cursor: default;
-}
+.story-carousel-arrow:disabled { opacity: .25; cursor: default; }
 
 .story-carousel-count {
   position: absolute;
   left: 50%;
-  bottom: .75rem;
+  bottom: .65rem;
   transform: translateX(-50%);
   z-index: 8;
   color: var(--gold);
-  font-size: .78rem;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: .7rem;
   letter-spacing: .15em;
 }
 
 .miccoli-story-section > * {
-  flex: 0 0 min(88vw, 1020px) !important;
-  width: min(88vw, 1020px) !important;
+  flex: 0 0 min(74vw, 820px) !important;
+  width: min(74vw, 820px) !important;
   min-width: 0 !important;
   margin: 0 !important;
   scroll-snap-align: center;
@@ -74,42 +74,54 @@
 }
 
 .miccoli-story-section > .story-facts,
-.miccoli-story-section > .story-live-grid {
-  display: none !important;
-}
+.miccoli-story-section > .story-live-grid { display: none !important; }
 
 .story-hero,
 .story-chapter,
 .story-arena,
 .story-break,
 .story-now {
-  min-height: clamp(500px, 62vw, 680px) !important;
-  max-height: 720px;
+  min-height: 520px !important;
+  max-height: 590px;
   border: 1px solid rgba(208,173,99,.24) !important;
   background-color: rgba(8,12,10,.96);
   overflow: hidden;
 }
 
 .story-hero { position: relative; }
-.story-hero-copy { max-width: 680px !important; }
-.story-hero-copy h2 { font-size: clamp(3rem, 7vw, 5.6rem) !important; }
-.story-hero-copy > p:last-child { font-size: clamp(1rem, 1.8vw, 1.25rem) !important; }
+.story-hero-copy {
+  left: clamp(1.5rem,4vw,3rem) !important;
+  right: clamp(1.5rem,4vw,3rem) !important;
+  bottom: clamp(1.5rem,4vw,3rem) !important;
+  max-width: 560px !important;
+}
+.story-hero-copy h2 {
+  font-size: clamp(2.45rem,5vw,4rem) !important;
+  line-height: .98 !important;
+  letter-spacing: -.02em !important;
+  margin-bottom: .7rem !important;
+}
+.story-hero-copy > p:last-child {
+  max-width: 540px !important;
+  font-size: clamp(.95rem,1.35vw,1.08rem) !important;
+  line-height: 1.55 !important;
+}
 
 .story-chapter,
 .story-chapter-control {
   display: grid !important;
-  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr) !important;
+  grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr) !important;
   align-items: stretch !important;
   gap: 0 !important;
 }
 
 .story-chapter-reverse .story-image { order: 0 !important; }
-.story-image { height: 100%; min-height: 500px; }
+.story-image { height: 100%; min-height: 520px; }
 .story-image::after { display: none !important; }
 .story-image img {
   width: 100%;
   height: 100% !important;
-  min-height: 500px;
+  min-height: 520px;
   aspect-ratio: auto !important;
   object-fit: cover;
 }
@@ -119,30 +131,28 @@
   flex-direction: column;
   justify-content: center;
   max-width: none !important;
-  padding: clamp(1.5rem, 4vw, 3.5rem);
+  padding: clamp(1.5rem,3vw,2.6rem);
 }
-
 .story-copy h3,
 .story-arena-copy h3,
 .story-break h3,
 .story-now h3 {
-  font-size: clamp(1.9rem, 3.6vw, 3.2rem) !important;
-  margin-bottom: .9rem !important;
+  font-size: clamp(1.75rem,3vw,2.55rem) !important;
+  line-height: 1.08 !important;
+  margin-bottom: .75rem !important;
 }
-
 .story-copy p,
 .story-break p,
 .story-now p,
 .story-arena-copy p {
-  font-size: clamp(.96rem, 1.4vw, 1.05rem) !important;
-  line-height: 1.55;
+  font-size: clamp(.9rem,1.15vw,.98rem) !important;
+  line-height: 1.58;
 }
-
-.story-number { font-size: clamp(2rem, 4vw, 3.6rem) !important; }
+.story-number { font-size: clamp(1.8rem,3vw,2.8rem) !important; }
 .story-pull {
-  margin-top: 1rem !important;
-  padding: .9rem 0 .9rem 1rem !important;
-  font-size: clamp(1.05rem, 1.7vw, 1.3rem) !important;
+  margin-top: .85rem !important;
+  padding: .7rem 0 .7rem .9rem !important;
+  font-size: clamp(1rem,1.4vw,1.15rem) !important;
 }
 
 .story-arena { position: relative; }
@@ -151,8 +161,8 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  max-width: 560px !important;
-  padding: clamp(2rem, 5vw, 4rem) !important;
+  max-width: 480px !important;
+  padding: clamp(1.7rem,4vw,3rem) !important;
 }
 
 .story-break {
@@ -162,13 +172,13 @@
   justify-content: center;
   text-align: left !important;
   max-width: none !important;
-  padding: clamp(2rem, 6vw, 5rem) !important;
+  padding: clamp(2rem,5vw,4rem) !important;
   background:
-    linear-gradient(90deg, rgba(4,6,5,.94), rgba(4,6,5,.72)),
+    linear-gradient(90deg,rgba(4,6,5,.94),rgba(4,6,5,.72)),
     url("assets/images/miccoli-story/Miccoli%20facing%20the%20crowds%20at%2002%20arena%20London%20photo%20by%20Rosie%20Smith.jpg") center / cover no-repeat;
 }
 .story-break p:not(.eyebrow):not(.story-number) {
-  max-width: 700px !important;
+  max-width: 620px !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
@@ -184,44 +194,44 @@
   flex-direction: column;
   justify-content: center;
   max-width: none !important;
-  padding: clamp(2rem, 6vw, 5rem) !important;
+  padding: clamp(2rem,5vw,4rem) !important;
 }
 
-@media (max-width: 760px) {
+@media (max-width:760px) {
+  .story-carousel-shell { max-width: 100%; }
   .miccoli-story-section {
     gap: .8rem !important;
-    padding: 2rem 2.8rem 2.8rem !important;
-    scroll-padding-inline: 2.8rem;
+    padding: 2rem 2.5rem 2.8rem !important;
+    scroll-padding-inline: 2.5rem;
   }
   .miccoli-story-section > * {
     flex-basis: 84vw !important;
     width: 84vw !important;
   }
-  .story-carousel-arrow { width: 34px; height: 34px; font-size: 1.6rem; }
-  .story-carousel-prev { left: .35rem; }
-  .story-carousel-next { right: .35rem; }
+  .story-carousel-arrow { width: 34px; height: 34px; font-size: 1.5rem; }
+  .story-carousel-prev { left: .25rem; }
+  .story-carousel-next { right: .25rem; }
   .story-hero,
   .story-chapter,
   .story-arena,
   .story-break,
   .story-now {
-    min-height: 620px !important;
+    min-height: 590px !important;
     max-height: none;
   }
   .story-chapter,
   .story-chapter-control { grid-template-columns: 1fr !important; }
   .story-image,
   .story-image img {
-    min-height: 250px !important;
-    height: 250px !important;
+    min-height: 230px !important;
+    height: 230px !important;
   }
-  .story-copy { padding: 1.25rem !important; }
+  .story-copy { padding: 1.2rem !important; }
   .story-control-visual {
-    min-height: 220px !important;
+    min-height: 210px !important;
     border-right: 0 !important;
     border-bottom: 1px solid rgba(208,173,99,.22) !important;
   }
-  .story-arena-copy { padding: 1.4rem !important; }
-  .story-break { padding: 1.5rem !important; }
-  .story-now { padding: 1.5rem !important; }
+  .story-hero-copy h2 { font-size: clamp(2.3rem,12vw,3.3rem) !important; }
+  .story-arena-copy,.story-break,.story-now { padding: 1.35rem !important; }
 }

@@ -22,13 +22,29 @@
 
     const chapterTwo = carousel.querySelector('.story-chapter.story-chapter-reverse .story-copy');
     if (chapterTwo) {
-      const paragraphs = chapterTwo.querySelectorAll('p:not(.story-number):not(.eyebrow):not(.story-pull)');
+      const heading = chapterTwo.querySelector('h3');
+      if (heading) heading.textContent = 'A life shaped beyond home';
+
+      const paragraphs = chapterTwo.querySelectorAll('p:not(.story-number):not(.eyebrow):not(.story-pull):not(.chapter-two-final-line)');
       if (paragraphs[0]) {
-        paragraphs[0].textContent = 'Miccoli’s journey took them far beyond the UK. The band toured internationally and spent several years living in Southeast Asia, followed by time in California, where they continued to write, record and shape their sound.';
+        paragraphs[0].textContent = 'Miccoli’s story soon moved beyond the UK. The siblings spent several years living and working across Southeast Asia, followed by time in California, travelling together while continuing to write, record and develop their sound.';
       }
       if (paragraphs[1]) {
-        paragraphs[1].textContent = 'Those years widened both their perspective and their creative world, influencing not only the music itself, but also the visuals, atmosphere and storytelling that became central to the Miccoli identity.';
+        paragraphs[1].textContent = 'Living abroad became an important part of the band’s creative identity. New places, cultures and experiences fed into the music, but also into the visual world surrounding it — from the atmosphere of their videos to the way they approached songwriting and performance.';
       }
+
+      let finalLine = chapterTwo.querySelector('.chapter-two-final-line');
+      if (!finalLine) {
+        finalLine = document.createElement('p');
+        finalLine.className = 'chapter-two-final-line';
+        const pull = chapterTwo.querySelector('.story-pull');
+        if (pull) chapterTwo.insertBefore(finalLine, pull);
+        else chapterTwo.appendChild(finalLine);
+      }
+      finalLine.textContent = 'Rather than following a conventional path, Miccoli built their identity through movement, experience and making music together wherever they happened to be.';
+
+      const pull = chapterTwo.querySelector('.story-pull');
+      if (pull) pull.textContent = 'Different places changed the view, but the music remained the constant.';
     }
 
     const shell = document.createElement('div');

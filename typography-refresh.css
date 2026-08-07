@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Inter:wght@400;500;600&display=swap');
+
+/* Contemporary editorial typography for Miccoli */
+body {
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+  letter-spacing: -.01em;
+}
+
+h1, h2, h3, h4,
+.brand,
+.story-hero-copy h2,
+.story-copy h3,
+.story-arena-copy h3,
+.story-break h3,
+.story-now h3,
+.singles-heading h3,
+.single-copy h4,
+.release-copy h3,
+.release-card h3 {
+  font-family: "Bodoni Moda", Didot, "Times New Roman", serif !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  letter-spacing: -.025em !important;
+}
+
+h2 { letter-spacing: -.03em !important; }
+
+.eyebrow,
+.nav-links a,
+.footer-socials a,
+.btn,
+.release-type,
+.story-carousel-count,
+.story-facts span,
+.story-control-visual small,
+.story-control-visual b,
+.scroll-cue {
+  font-family: "Inter", Arial, sans-serif !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .15em !important;
+}
+
+.brand {
+  text-transform: none !important;
+  letter-spacing: -.02em !important;
+  font-weight: 500 !important;
+}
+
+.nav-links a,
+.footer-socials a {
+  font-size: .76rem !important;
+  letter-spacing: .16em !important;
+}
+
+.eyebrow {
+  font-size: .68rem !important;
+  letter-spacing: .18em !important;
+}
+
+.btn {
+  font-size: .7rem !important;
+  letter-spacing: .14em !important;
+}
+
+p,
+.release-copy p,
+.release-card p,
+.story-copy p,
+.story-break p,
+.story-now p,
+.story-arena-copy p,
+.newsletter-card p,
+.tour-panel p,
+.product-card p,
+.card p {
+  font-family: "Inter", Arial, sans-serif !important;
+  font-weight: 400;
+}
+
+input,
+select,
+textarea,
+.signup-form label,
+.legal-links a {
+  font-family: "Inter", Arial, sans-serif !important;
+}
+
+.story-pull {
+  font-family: "Bodoni Moda", Didot, serif !important;
+  font-style: italic;
+  letter-spacing: -.015em;
+}

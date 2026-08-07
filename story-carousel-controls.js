@@ -3,6 +3,23 @@
     const carousel = document.querySelector('.miccoli-story-section');
     if (!carousel || carousel.closest('.story-carousel-shell')) return;
 
+    const chapterOne = carousel.querySelector('.story-chapter:not(.story-chapter-reverse):not(.story-chapter-control) .story-copy');
+    if (chapterOne) {
+      const paragraphs = chapterOne.querySelectorAll('p:not(.story-number):not(.eyebrow)');
+      if (paragraphs[0]) {
+        paragraphs[0].textContent = 'Miccoli are Francesca, Adriano and Alessio, a British-Italian sibling trio originally formed in Birmingham and now based in London.';
+      }
+      if (paragraphs[1]) {
+        paragraphs[1].textContent = 'Creating together from an early age, they developed an instinctive musical connection shaped by classical training, their shared history and their British-Italian background.';
+      }
+      if (!chapterOne.querySelector('.chapter-one-final-line')) {
+        const finalLine = document.createElement('p');
+        finalLine.className = 'chapter-one-final-line';
+        finalLine.textContent = 'Their sound is centred on emotionally direct songwriting, close sibling harmonies and atmospheric alternative production.';
+        chapterOne.appendChild(finalLine);
+      }
+    }
+
     const shell = document.createElement('div');
     shell.className = 'story-carousel-shell';
 

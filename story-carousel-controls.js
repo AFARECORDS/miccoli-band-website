@@ -45,6 +45,54 @@
 
       const pull = chapterTwo.querySelector('.story-pull');
       if (pull) pull.textContent = 'Different places changed the view, but the music remained the constant.';
+
+      if (!document.querySelector('#chapter-two-fit-rules')) {
+        const style = document.createElement('style');
+        style.id = 'chapter-two-fit-rules';
+        style.textContent = `
+          .story-chapter-reverse .story-copy {
+            justify-content: flex-start !important;
+            padding: .85rem 1.7rem .9rem !important;
+          }
+          .story-chapter-reverse .story-number {
+            font-size: 1rem !important;
+            line-height: 1 !important;
+            margin: 0 0 .35rem !important;
+          }
+          .story-chapter-reverse .eyebrow {
+            font-size: .72rem !important;
+            line-height: 1.1 !important;
+            margin: 0 0 .45rem !important;
+          }
+          .story-chapter-reverse .story-copy h3 {
+            font-size: clamp(1.55rem, 2.3vw, 2.05rem) !important;
+            line-height: 1.02 !important;
+            margin: 0 0 .55rem !important;
+          }
+          .story-chapter-reverse .story-copy p:not(.story-number):not(.eyebrow):not(.story-pull) {
+            font-size: clamp(.74rem, .9vw, .82rem) !important;
+            line-height: 1.34 !important;
+            margin: 0 0 .5rem !important;
+          }
+          .story-chapter-reverse .story-pull {
+            margin: .05rem 0 0 !important;
+            padding: .35rem 0 .35rem .7rem !important;
+            font-size: clamp(.78rem, .95vw, .88rem) !important;
+            line-height: 1.3 !important;
+          }
+          @media (max-width:760px) {
+            .story-chapter-reverse .story-copy {
+              padding: .85rem !important;
+            }
+            .story-chapter-reverse .story-copy p:not(.story-number):not(.eyebrow):not(.story-pull) {
+              font-size: .78rem !important;
+              line-height: 1.32 !important;
+              margin-bottom: .42rem !important;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+      }
     }
 
     const shell = document.createElement('div');

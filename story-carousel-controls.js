@@ -120,6 +120,26 @@
       }
     }
 
+    const chapterFour = carousel.querySelector('.story-chapter.story-chapter-control .story-copy');
+    if (chapterFour) {
+      const eyebrow = chapterFour.querySelector('.eyebrow');
+      const heading = chapterFour.querySelector('h3');
+      const paragraphs = chapterFour.querySelectorAll('p:not(.story-number):not(.eyebrow):not(.story-pull)');
+      const pull = chapterFour.querySelector('.story-pull');
+
+      if (eyebrow) eyebrow.textContent = 'Creative Independence';
+      if (heading) heading.textContent = 'Building the right structure around the music';
+      if (paragraphs[0]) {
+        paragraphs[0].textContent = 'After years of writing, recording and working across different parts of the music industry, Miccoli reached a point where protecting their creative direction became increasingly important. The siblings established AFA Records as their own independent label, creating a structure through which they could release music, develop projects and manage their long-term vision while keeping creative decisions within the band.';
+      }
+      if (paragraphs[1]) {
+        paragraphs[1].innerHTML = 'Through <strong>AFA Records</strong>, Miccoli work with <strong>AWAL</strong>, part of <strong>Sony Music</strong>, giving their releases access to an established global distribution and music-services network while allowing the band to remain independently driven.';
+      }
+      if (pull) {
+        pull.textContent = 'For Miccoli, the goal was never independence for its own sake. It was about building the right structure around the music — one that could support its growth without changing what made it Miccoli in the first place.';
+      }
+    }
+
     const shell = document.createElement('div');
     shell.className = 'story-carousel-shell';
 

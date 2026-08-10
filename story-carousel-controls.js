@@ -95,6 +95,14 @@
       }
     }
 
+    const arrhythmiaChapter = carousel.querySelector('.story-arena .story-arena-copy');
+    if (arrhythmiaChapter) {
+      const body = arrhythmiaChapter.querySelector('p:not(.eyebrow):not(.story-number)');
+      if (body) {
+        body.innerHTML = 'While touring on a series of international mini-tours, Miccoli began reaching wider audiences and building momentum beyond the UK. Following the release of their debut album <em>Arrhythmia</em>, the band joined a 22-date UK arena tour, bringing their music to significantly larger crowds and marking an important step forward in their live career.';
+      }
+    }
+
     const shell = document.createElement('div');
     shell.className = 'story-carousel-shell';
 

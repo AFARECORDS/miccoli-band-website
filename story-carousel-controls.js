@@ -103,6 +103,23 @@
       }
     }
 
+    const covidChapter = carousel.querySelector('.story-break');
+    if (covidChapter) {
+      const heading = covidChapter.querySelector('h3');
+      if (heading) heading.textContent = 'A defining interruption';
+
+      const paragraphs = covidChapter.querySelectorAll('p:not(.story-number):not(.eyebrow)');
+      if (paragraphs[0]) {
+        paragraphs[0].innerHTML = 'Further touring was being scheduled when COVID brought the live entertainment industry to a standstill. Venues closed, planned dates were cancelled and the momentum surrounding <em>Arrhythmia</em> disappeared almost overnight.';
+      }
+      if (paragraphs[1]) {
+        paragraphs[1].textContent = 'For Miccoli, it was more than a temporary pause. After years of work, international touring and a major UK arena run, the disruption felt like a sudden reversal of everything they had been building. It was a difficult period that halted their progress at a crucial moment.';
+      }
+      if (paragraphs[2]) {
+        paragraphs[2].textContent = 'The siblings gradually rebuilt by returning to the studio, releasing new music and travelling again to create cinematic music videos as restrictions eased. Re-establishing that momentum took time, but the creative connection between them never disappeared.';
+      }
+    }
+
     const shell = document.createElement('div');
     shell.className = 'story-carousel-shell';
 

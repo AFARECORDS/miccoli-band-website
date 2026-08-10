@@ -155,6 +155,35 @@
   font-size: clamp(1rem,1.4vw,1.15rem) !important;
 }
 
+/* Chapter 2 carries more narrative copy, so tighten only this panel. */
+.story-chapter-reverse .story-copy {
+  justify-content: flex-start;
+  padding: 1rem 2rem 1.05rem !important;
+}
+.story-chapter-reverse .story-number {
+  margin-bottom: .15rem !important;
+}
+.story-chapter-reverse .eyebrow {
+  margin-bottom: .45rem !important;
+}
+.story-chapter-reverse .story-copy h3 {
+  font-size: clamp(1.65rem,2.55vw,2.25rem) !important;
+  line-height: 1.02 !important;
+  margin-bottom: .55rem !important;
+}
+.story-chapter-reverse .story-copy p:not(.story-number):not(.eyebrow):not(.story-pull) {
+  font-size: clamp(.78rem,1vw,.88rem) !important;
+  line-height: 1.42 !important;
+  margin-top: 0 !important;
+  margin-bottom: .65rem !important;
+}
+.story-chapter-reverse .story-pull {
+  margin-top: .05rem !important;
+  padding: .45rem 0 .45rem .75rem !important;
+  font-size: clamp(.82rem,1.05vw,.94rem) !important;
+  line-height: 1.35 !important;
+}
+
 .story-arena { position: relative; }
 .story-arena-copy {
   display: flex;
@@ -227,6 +256,12 @@
     height: 230px !important;
   }
   .story-copy { padding: 1.2rem !important; }
+  .story-chapter-reverse .story-copy { padding: 1rem !important; }
+  .story-chapter-reverse .story-copy p:not(.story-number):not(.eyebrow):not(.story-pull) {
+    font-size: .82rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: .5rem !important;
+  }
   .story-control-visual {
     min-height: 210px !important;
     border-right: 0 !important;

@@ -27,10 +27,10 @@
 
       const paragraphs = chapterTwo.querySelectorAll('p:not(.story-number):not(.eyebrow):not(.story-pull):not(.chapter-two-final-line)');
       if (paragraphs[0]) {
-        paragraphs[0].textContent = 'Miccoli’s story soon moved beyond the UK. The siblings spent several years living and working across Southeast Asia, followed by time in California, travelling together while continuing to write, record and develop their sound.';
+        paragraphs[0].textContent = 'Miccoli’s story soon moved beyond the UK. The siblings spent several years working across Southeast Asia under sponsorship deals, performing at venues, promoting products and creating short-form advertising content alongside their music.';
       }
       if (paragraphs[1]) {
-        paragraphs[1].textContent = 'Living abroad became an important part of the band’s creative identity. New places, cultures and experiences fed into the music, but also into the visual world surrounding it — from the atmosphere of their videos to the way they approached songwriting and performance.';
+        paragraphs[1].textContent = 'That international chapter later took them to California, where they lived for a period while working under another sponsorship arrangement and touring across the state.';
       }
 
       let finalLine = chapterTwo.querySelector('.chapter-two-final-line');
@@ -41,7 +41,7 @@
         if (pull) chapterTwo.insertBefore(finalLine, pull);
         else chapterTwo.appendChild(finalLine);
       }
-      finalLine.textContent = 'Rather than following a conventional path, Miccoli built their identity through movement, experience and making music together wherever they happened to be.';
+      finalLine.textContent = 'Those experiences pushed the band into very different environments — part live act, part creative team, part brand collaborators — while they continued writing, recording and developing the sound and visual identity that would become distinctly Miccoli.';
 
       const pull = chapterTwo.querySelector('.story-pull');
       if (pull) pull.textContent = 'Different places changed the view, but the music remained the constant.';

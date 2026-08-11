@@ -192,7 +192,7 @@
             </div>
           </article>
           <a class="store-preview-card store-preview-live" href="https://www.miccolibandshop.com/products/miccoli-logo-hoodie" target="_blank" rel="noopener noreferrer" aria-label="Shop the Miccoli Logo Hoodie">
-            <div class="store-preview-image"><img src="https://www.miccolibandshop.com/cdn/shop/files/premium-hoodie-black-back.jpg?v=1722536476&width=900" alt="Miccoli Logo Hoodie" loading="lazy"></div>
+            <div class="store-preview-image"><img src="https://www.miccolibandshop.com/cdn/shop/files/Miccoli_band_logo_design_hoodie.jpg?v=1751210993&width=900" alt="Miccoli Logo Hoodie" loading="lazy"></div>
             <div class="store-preview-copy">
               <p class="store-preview-label">Official Merch</p>
               <h3>Miccoli Logo Hoodie</h3>

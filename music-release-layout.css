@@ -39,6 +39,21 @@
 .single-cover-10 { background-image: url("/miccoli-band-website/assets/images/singles/512x512bb.jpg?v=2") !important; }
 .single-cover-11 { background-image: url("/miccoli-band-website/assets/images/singles/512x512bb%20%281%29.jpg?v=2") !important; }
 
+/* Chapter 4 logo panel — real repo asset overlay */
+.story-chapter-control .story-control-visual {
+  position: relative !important;
+  overflow: hidden !important;
+}
+.story-chapter-control .story-control-visual::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 20 !important;
+  display: block !important;
+  background: #07100c url("/miccoli-band-website/assets/images/miccoli-story/chapter4-logos.svg?v=1") center / cover no-repeat !important;
+  pointer-events: none !important;
+}
+
 @media (max-width: 760px) {
   .featured-release { grid-template-columns: 1fr !important; max-width: 500px; gap: 1.5rem; }
   .release-art { width: min(72vw, 255px) !important; max-width: 255px !important; margin: 0 auto; }
@@ -46,4 +61,5 @@
   .release-copy .btn { margin: 1rem auto 0; width: 100%; max-width: 300px; }
   .release-grid { grid-template-columns: 1fr; max-width: 390px; gap: 1.5rem; }
   .release-card .mini-art { width: min(64vw, 210px) !important; max-width: 210px !important; }
+  .story-chapter-control .story-control-visual::before { background-size: cover !important; }
 }

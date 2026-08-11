@@ -163,6 +163,70 @@
     const storyNow = carousel.querySelector('.story-now');
     if (storyNow) storyNow.remove();
 
+    const storeSection = document.querySelector('#store');
+    if (storeSection && !storeSection.dataset.storePreviewReady) {
+      storeSection.dataset.storePreviewReady = 'true';
+      storeSection.innerHTML = `
+        <div class="section-heading reveal is-visible">
+          <p class="eyebrow">Store</p>
+          <h2>Official Miccoli Store</h2>
+          <p>Physical music, official merch and exclusive bundles from Miccoli.</p>
+        </div>
+        <div class="store-preview-grid">
+          <article class="store-preview-card store-preview-coming">
+            <div class="store-preview-art store-preview-cd" aria-hidden="true"><span>ARRHYTHMIA</span><small>CD</small></div>
+            <div class="store-preview-copy">
+              <p class="store-preview-label">Physical Music</p>
+              <h3>Arrhythmia CD</h3>
+              <p>Miccoli’s debut album on CD.</p>
+              <span class="store-preview-status">Coming soon</span>
+            </div>
+          </article>
+          <article class="store-preview-card store-preview-coming">
+            <div class="store-preview-art store-preview-bundle" aria-hidden="true"><span>ARRHYTHMIA</span><small>CD + LOGO T-SHIRT</small></div>
+            <div class="store-preview-copy">
+              <p class="store-preview-label">Exclusive Bundle</p>
+              <h3>CD + Miccoli Logo T-Shirt Bundle</h3>
+              <p>Arrhythmia on CD with the official Miccoli logo T-shirt.</p>
+              <span class="store-preview-status">Coming soon</span>
+            </div>
+          </article>
+          <a class="store-preview-card store-preview-live" href="https://www.miccolibandshop.com/products/miccoli-logo-hoodie" target="_blank" rel="noopener noreferrer" aria-label="Shop the Miccoli Logo Hoodie">
+            <div class="store-preview-image"><img src="https://www.miccolibandshop.com/cdn/shop/files/premium-hoodie-black-front.jpg?v=1722536476&width=900" alt="Miccoli Logo Hoodie" loading="lazy"></div>
+            <div class="store-preview-copy">
+              <p class="store-preview-label">Official Merch</p>
+              <h3>Miccoli Logo Hoodie</h3>
+              <p>Official Miccoli logo hoodie.</p>
+              <span class="store-preview-link">Shop Hoodie →</span>
+            </div>
+          </a>
+        </div>
+        <div class="center store-preview-cta"><a class="btn btn-primary" href="https://www.miccolibandshop.com/" target="_blank" rel="noopener noreferrer">Visit the Official Store</a></div>`;
+
+      const storeStyle = document.createElement('style');
+      storeStyle.id = 'store-preview-rules';
+      storeStyle.textContent = `
+        #store .section-heading { max-width:760px; margin-bottom:2rem; }
+        .store-preview-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+        .store-preview-card { display:flex; flex-direction:column; min-width:0; border:1px solid rgba(208,173,99,.25); background:linear-gradient(145deg,rgba(208,173,99,.055),rgba(246,240,232,.018)); color:inherit; text-decoration:none; overflow:hidden; transition:transform .2s ease,border-color .2s ease,background .2s ease; }
+        .store-preview-live:hover { transform:translateY(-4px); border-color:rgba(208,173,99,.55); background:linear-gradient(145deg,rgba(208,173,99,.09),rgba(246,240,232,.025)); }
+        .store-preview-image,.store-preview-art { aspect-ratio:1/1; margin:1rem 1rem 0; border:1px solid rgba(208,173,99,.2); overflow:hidden; background:#0b0f0d; }
+        .store-preview-image img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+        .store-preview-art { display:grid; place-content:center; gap:.55rem; text-align:center; background:radial-gradient(circle at 50% 40%,rgba(208,173,99,.12),transparent 48%),#0a0f0c; }
+        .store-preview-art span { font-family:"IM Fell English SC","Cormorant Garamond",serif; color:#f6f0e8; font-size:clamp(1.35rem,2.3vw,2rem); letter-spacing:.08em; }
+        .store-preview-art small { color:var(--gold); font-size:.68rem; letter-spacing:.2em; }
+        .store-preview-copy { padding:1rem 1rem 1.2rem; }
+        .store-preview-copy h3 { margin:.25rem 0 .5rem; font-size:clamp(1.25rem,2vw,1.6rem); line-height:1.05; }
+        .store-preview-copy > p:not(.store-preview-label) { margin:0; color:rgba(246,240,232,.68); font-size:.92rem; }
+        .store-preview-label { margin:0; color:var(--gold); font-size:.67rem; letter-spacing:.14em; text-transform:uppercase; }
+        .store-preview-status,.store-preview-link { display:inline-block; margin-top:1rem; color:var(--gold); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase; }
+        .store-preview-status { opacity:.72; }
+        .store-preview-cta { margin-top:1.8rem; }
+        @media (max-width:820px) { .store-preview-grid { grid-template-columns:1fr; } .store-preview-image,.store-preview-art { aspect-ratio:16/10; } }
+      `;
+      document.head.appendChild(storeStyle);
+    }
+
     const shell = document.createElement('div');
     shell.className = 'story-carousel-shell';
 

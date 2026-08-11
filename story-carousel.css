@@ -223,7 +223,7 @@
   background-image: url("assets/images/miccoli-story/chapter4-logos.svg") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  background-size: 82% auto !important;
+  background-size: 64% auto !important;
   background-color: #07100c !important;
 }
 .story-chapter-control .story-control-visual > * {
@@ -312,7 +312,7 @@
     border-bottom: 1px solid rgba(208,173,99,.22) !important;
   }
   .story-chapter-control .story-control-visual {
-    background-size: auto 86% !important;
+    background-size: auto 68% !important;
   }
   .story-chapter-control .story-copy {
     padding: .9rem !important;

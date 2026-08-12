@@ -174,7 +174,7 @@
         </div>
         <div class="store-preview-grid">
           <a class="store-preview-card store-preview-live" href="https://www.miccolibandshop.com/products/arrhythmia-cd-miccoli" target="_blank" rel="noopener noreferrer" aria-label="Shop the Arrhythmia Album CD">
-            <div class="store-preview-image"><img src="assets/images/store/arrhythmia-cd.jpg" alt="Arrhythmia Album CD" loading="lazy"></div>
+            <div class="store-preview-image"><img src="assets/images/store/arrhythmia-cd-fixed.jpg" alt="Arrhythmia Album CD" loading="lazy"></div>
             <div class="store-preview-copy">
               <p class="store-preview-label">Physical Music</p>
               <h3>Arrhythmia Album CD</h3>

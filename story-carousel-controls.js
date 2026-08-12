@@ -173,24 +173,24 @@
           <p>Physical music, official merch and exclusive bundles from Miccoli.</p>
         </div>
         <div class="store-preview-grid">
-          <article class="store-preview-card store-preview-coming">
-            <div class="store-preview-art store-preview-cd" aria-hidden="true"><span>ARRHYTHMIA</span><small>CD</small></div>
+          <a class="store-preview-card store-preview-live" href="https://www.miccolibandshop.com/products/arrhythmia-cd-miccoli" target="_blank" rel="noopener noreferrer" aria-label="Shop the Arrhythmia Album CD">
+            <div class="store-preview-image"><img src="assets/images/store/arrhythmia-cd.jpg" alt="Arrhythmia Album CD" loading="lazy"></div>
             <div class="store-preview-copy">
               <p class="store-preview-label">Physical Music</p>
-              <h3>Arrhythmia CD</h3>
+              <h3>Arrhythmia Album CD</h3>
               <p>Miccoli’s debut album on CD.</p>
-              <span class="store-preview-status">Coming soon</span>
+              <span class="store-preview-link">Shop CD →</span>
             </div>
-          </article>
-          <article class="store-preview-card store-preview-coming">
-            <div class="store-preview-art store-preview-bundle" aria-hidden="true"><span>ARRHYTHMIA</span><small>CD + LOGO T-SHIRT</small></div>
+          </a>
+          <a class="store-preview-card store-preview-live" href="https://www.miccolibandshop.com/products/arrhythmia-cd-miccoli-logo-t-shirt-bundle" target="_blank" rel="noopener noreferrer" aria-label="Shop the Arrhythmia CD and Miccoli Logo T-Shirt Bundle">
+            <div class="store-preview-image"><img src="assets/images/store/arrhythmia-cd-logo-tshirt-bundle.jpg" alt="Arrhythmia CD and Miccoli Logo T-Shirt Bundle" loading="lazy"></div>
             <div class="store-preview-copy">
               <p class="store-preview-label">Exclusive Bundle</p>
-              <h3>CD + Miccoli Logo T-Shirt Bundle</h3>
+              <h3>Arrhythmia CD + Miccoli Logo T-Shirt Bundle</h3>
               <p>Arrhythmia on CD with the official Miccoli logo T-shirt.</p>
-              <span class="store-preview-status">Coming soon</span>
+              <span class="store-preview-link">Shop Bundle →</span>
             </div>
-          </article>
+          </a>
           <a class="store-preview-card store-preview-live" href="https://www.miccolibandshop.com/products/miccoli-logo-hoodie" target="_blank" rel="noopener noreferrer" aria-label="Shop the Miccoli Logo Hoodie">
             <div class="store-preview-image"><img src="https://www.miccolibandshop.com/cdn/shop/files/Miccoli_band_logo_design_hoodie.jpg?v=1751210993&width=900" alt="Miccoli Logo Hoodie" loading="lazy"></div>
             <div class="store-preview-copy">

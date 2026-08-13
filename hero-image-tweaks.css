@@ -32,6 +32,11 @@
   display: none !important;
 }
 
+.hero::before {
+  background: url("assets/images/miccoli-logo-white-clean.png") center center / contain no-repeat !important;
+  filter: drop-shadow(0 8px 28px rgba(0,0,0,.55)) !important;
+}
+
 .scroll-cue {
   bottom: 1.4rem;
 }

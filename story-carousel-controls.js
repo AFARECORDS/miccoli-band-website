@@ -3,6 +3,25 @@
     const carousel = document.querySelector('.miccoli-story-section');
     if (!carousel || carousel.closest('.story-carousel-shell')) return;
 
+    const headerBrand = document.querySelector('.site-header .brand');
+    if (headerBrand && !headerBrand.querySelector('img')) {
+      headerBrand.textContent = '';
+      const logo = document.createElement('img');
+      logo.src = 'assets/images/miccoli-logo-white-distressed.png';
+      logo.alt = 'Miccoli';
+      logo.style.display = 'block';
+      logo.style.width = '58px';
+      logo.style.height = '58px';
+      logo.style.objectFit = 'contain';
+      logo.style.objectPosition = 'center';
+      headerBrand.style.display = 'inline-flex';
+      headerBrand.style.alignItems = 'center';
+      headerBrand.style.justifyContent = 'center';
+      headerBrand.style.width = '58px';
+      headerBrand.style.height = '58px';
+      headerBrand.appendChild(logo);
+    }
+
     const chapterOne = carousel.querySelector('.story-chapter:not(.story-chapter-reverse):not(.story-chapter-control) .story-copy');
     if (chapterOne) {
       const paragraphs = chapterOne.querySelectorAll('p:not(.story-number):not(.eyebrow)');

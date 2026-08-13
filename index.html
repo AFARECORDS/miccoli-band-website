@@ -43,5 +43,26 @@
   <footer class="site-footer"><a class="brand" href="#top">Miccoli</a><div class="footer-socials" aria-label="Footer social links"><a href="https://www.instagram.com/miccoliband" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.youtube.com/channel/UCTX7K7YI75LVPDUd-fY62Uw" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.tiktok.com/@miccoliband_" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://open.spotify.com/artist/5k6ayjMCjG9Dyjkrnjwijv" target="_blank" rel="noopener noreferrer">Spotify</a><a href="https://music.apple.com/gb/artist/miccoli/205889463" target="_blank" rel="noopener noreferrer">Apple Music</a><a href="https://www.facebook.com/miccoliband" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://x.com/MICCOLIband" target="_blank" rel="noopener noreferrer">X</a><a href="https://soundcloud.com/miccoli" target="_blank" rel="noopener noreferrer">SoundCloud</a><a href="https://www.bandsintown.com/a/236152-miccoli" target="_blank" rel="noopener noreferrer">Bandsintown</a><a href="https://www.deezer.com/en/artist/389452" target="_blank" rel="noopener noreferrer">Deezer</a><a href="https://miccoliband.bandcamp.com/album/arrhythmia" target="_blank" rel="noopener noreferrer">Bandcamp</a><a href="https://www.linkedin.com/in/miccoliband/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div><div class="legal-links"><a href="#">Privacy Policy</a><a href="#">Cookies</a><a href="#">Terms & Conditions</a><a href="#">Do Not Sell My Personal Information</a></div><p>© <span data-year></span> AFA Records. All rights reserved.</p></footer>
   <script src="script.js?v=3"></script>
   <script src="story-carousel-controls.js?v=2"></script>
+  <script>
+    (() => {
+      const fixCdImage = () => {
+        const img = document.querySelector('a[href="https://www.miccolibandshop.com/products/arrhythmia-cd-miccoli"] .store-preview-image img');
+        if (!img) return false;
+        img.src = 'assets/images/store/arrhythmia-album-cd.webp';
+        img.style.objectFit = 'contain';
+        img.style.objectPosition = 'center';
+        const frame = img.closest('.store-preview-image');
+        if (frame) frame.style.background = '#fff';
+        return true;
+      };
+      if (!fixCdImage()) {
+        const observer = new MutationObserver(() => {
+          if (fixCdImage()) observer.disconnect();
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+        setTimeout(() => observer.disconnect(), 5000);
+      }
+    })();
+  </script>
 </body>
 </html>

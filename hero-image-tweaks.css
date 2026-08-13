@@ -33,6 +33,8 @@
 }
 
 .hero::before {
+  width: clamp(520px, 70vw, 900px) !important;
+  height: clamp(180px, 23vw, 300px) !important;
   background: url("assets/images/miccoli-logo-white-clean.png") center center / 100% auto no-repeat !important;
   filter: drop-shadow(0 8px 28px rgba(0,0,0,.55)) !important;
 }
@@ -46,5 +48,10 @@
     background:
       linear-gradient(to bottom, rgba(255,255,255,.06) 0%, rgba(3,7,5,0) 48%, rgba(3,7,5,.22) 100%),
       url("assets/images/Miccoli_Image2.jpg") center top / cover no-repeat !important;
+  }
+
+  .hero::before {
+    width: clamp(300px, 78vw, 620px) !important;
+    height: clamp(130px, 28vw, 240px) !important;
   }
 }

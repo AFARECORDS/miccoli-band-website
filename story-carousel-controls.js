@@ -174,7 +174,7 @@
         </div>
         <div class="store-preview-grid">
           <a class="store-preview-card store-preview-live" href="https://www.miccolibandshop.com/products/arrhythmia-cd-miccoli" target="_blank" rel="noopener noreferrer" aria-label="Shop the Arrhythmia Album CD">
-            <div class="store-preview-image"><img src="assets/images/store/arrhythmia-cd-fixed.jpg" alt="Arrhythmia Album CD" loading="lazy"></div>
+            <div class="store-preview-image"><img src="assets/images/store/arrhythmia-album-cd.webp" alt="Arrhythmia Album CD" loading="lazy"></div>
             <div class="store-preview-copy">
               <p class="store-preview-label">Physical Music</p>
               <h3>Arrhythmia Album CD</h3>
@@ -212,6 +212,8 @@
         .store-preview-live:hover { transform:translateY(-4px); border-color:rgba(208,173,99,.55); background:linear-gradient(145deg,rgba(208,173,99,.09),rgba(246,240,232,.025)); }
         .store-preview-image,.store-preview-art { aspect-ratio:1/1; margin:1rem 1rem 0; border:1px solid rgba(208,173,99,.2); overflow:hidden; background:#0b0f0d; }
         .store-preview-image img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+        .store-preview-card:first-child .store-preview-image { background:#fff; }
+        .store-preview-card:first-child .store-preview-image img { object-fit:contain; transform:scale(1.18); transform-origin:center; }
         .store-preview-art { display:grid; place-content:center; gap:.55rem; text-align:center; background:radial-gradient(circle at 50% 40%,rgba(208,173,99,.12),transparent 48%),#0a0f0c; }
         .store-preview-art span { font-family:"IM Fell English SC","Cormorant Garamond",serif; color:#f6f0e8; font-size:clamp(1.35rem,2.3vw,2rem); letter-spacing:.08em; }
         .store-preview-art small { color:var(--gold); font-size:.68rem; letter-spacing:.2em; }

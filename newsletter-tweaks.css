@@ -77,11 +77,11 @@
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 3.85rem;
+  bottom: 2.9rem;
   transform: translateX(-50%);
   z-index: 3;
-  width: clamp(320px, 42vw, 610px);
-  height: clamp(105px, 14vw, 190px);
+  width: clamp(290px, 38vw, 555px);
+  height: clamp(95px, 12.5vw, 175px);
   background: url("assets/images/miccoli-logo-white-clean.png") center center / 100% auto no-repeat;
   filter: drop-shadow(0 8px 28px rgba(0,0,0,.55));
   pointer-events: none;
@@ -109,8 +109,8 @@
   }
 
   .hero::before {
-    bottom: 3.45rem;
-    width: clamp(270px, 64vw, 460px);
-    height: clamp(90px, 21vw, 155px);
+    bottom: 2.9rem;
+    width: clamp(250px, 58vw, 420px);
+    height: clamp(82px, 19vw, 142px);
   }
 }
